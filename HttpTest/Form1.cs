@@ -78,6 +78,8 @@ namespace HttpTest
 
             var x = node.Nodes.Add($"Url: {url}");
 
+            //user-agents: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent
+            //https://www.whatismybrowser.com/detect/what-is-my-user-agent/
             var req = new HttpRequestMessage(HttpMethod.Get, url);
             req.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0");// reddit.com giver 403 hvis vi ikke ændrer ua fra default
             var sw = Stopwatch.StartNew();
